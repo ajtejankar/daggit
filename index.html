@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Daggit</title>
+</head>
+<body>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io.connect('http://localhost:8080');
+
+	  socket.on('graph', function (data) {
+	  	console.log(data);
+	  });
+
+	  socket.on('bonked', function(err) {
+	  	console.log(err);
+	  });
+	</script>
+</body>
+</html>

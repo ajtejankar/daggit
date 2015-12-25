@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var app = require('./app');
+
+function printHelp() {
+  console.log('Usage: daggit [OPTIONS] DIRECTORY');
+  console.log('Start daggit in the DIRECTORY');
+  console.log('Example: daggit .')
+  console.log('');
+  console.log('OPTIONS:');
+  console.log('--help, -h : print help');
+  console.log('');
+}
+
+function parseArgs(args) {
+  if (args.length < 3) {
+    return;
+  } else if (args[1] === '--help' || args[1] === '-h') {
+    return 'help';
+  } else {
+    return args[2];
+  }
+}
+
+let param = parseArgs(process.argv);
+
+if (!param || param === 'help') {
+	printHelp();
+  process.exit(1);
+}
+
+app(param);
