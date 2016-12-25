@@ -1,0 +1,40 @@
+.container {
+  font-family: monospace;
+  height: 100%;
+  padding:  20px 50px;
+  display: flex;
+}
+
+.left,
+.right {
+  padding: 0 10px;
+}
+
+.left {
+  width: 200px;
+}
+
+.left > a {
+  width: 100%;
+  text-overflow: ellipsis;
+  margin: 5px 0;
+  display: block;
+}
+
+.right {
+  flex: 1 1 auto;
+  position:  relative;
+}
+
+.commit {
+  position: absolute;
+  border-radius: 50% 50%;
+  background-color: #FF8888;
+  color: #555;
+  text-align: center;
+}
+
+#graph {
+  height: 100%;
+  width: 100%;
+}

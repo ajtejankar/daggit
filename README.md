@@ -1,4 +1,4 @@
 # Daggit
 
-The GUI for Git for Computer Scientists
+A DAG based Git GUI
 

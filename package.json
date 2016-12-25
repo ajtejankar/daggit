@@ -1,0 +1,35 @@
+{
+  "name": "daggit",
+  "version": "0.1.0",
+  "description": "A DAG based Git GUI",
+  "main": "index.js",
+  "dependencies": {
+    "d3": "^4.4.0",
+    "jquery": "^3.1.1",
+    "nodegit": "^0.16.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "electron": "^1.4.13"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "start": "./node_modules/.bin/electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chigur/daggit.git"
+  },
+  "keywords": [
+    "git",
+    "gui",
+    "dag"
+  ],
+  "author": "Ajinkya Tejankar <tejankarajinkya@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chigur/daggit/issues"
+  },
+  "homepage": "https://github.com/chigur/daggit#readme"
+}
