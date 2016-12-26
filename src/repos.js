@@ -54,4 +54,4 @@ let repos = [
   { name: 'ember.js', count: 9781 }
 ];
 
-exports.repos = repos;
+module.exports = repos;
