@@ -2,8 +2,9 @@ const path = require('path');
 const nodegit = require('nodegit');
 const $ = require('jquery');
 const d3 = require('d3');
-const repos = require(__dirname + '\\src\\repos');
 const getCommitHistory = require(__dirname + '\\src\\commit-history');
+const { ipcRenderer, remote } = require('electron');
+const { dialog } = remote;
 
 function renderGraph(commits) {
   const svg = d3.select('svg#graph');
@@ -31,29 +32,22 @@ function validateCommits(commits) {
   }
 }
 
-function getCommits(repo) {
-  let repoPath = path.resolve(__dirname, `../${repo}/.git`);
-  // let repoPath = path.resolve(__dirname, `.git`);
-
+function getCommits(repoPath) {
   getCommitHistory(repoPath)
     .then(commits => {
+      $('.graph-container').show();
+      $('.welcome').hide();
       validateCommits(commits);
       renderGraph(commits);
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      // TODO: Is a native dialog needed? Use alert box?
+      dialog.showErrorBox('Could not open the git repo', err + '');
+    });
 }
 
-let repoLinks = repos.map(r => {
-  return `<a href='?repo=${r.name}'>${r.name}</a>`;
-});
-
-$('.left').html(repoLinks.join('\n'));
-
-$('.left a').click(function (ev) {
-  let repo = $(this).text();
-  getCommits(repo);
-
-  ev.preventDefault();
-  ev.stopPropagation();
+ipcRenderer.on('open-repo', (ev, message) => {
+  console.log(ev, message);
+  getCommits(message);
 });
 

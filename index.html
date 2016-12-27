@@ -5,20 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Daggit</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.css">
 </head>
 <body>
 
-  <div class="container">
-    <div class="left"></div>
-    <div class="right">
-      <svg id="graph" version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="Triangle" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0 0 L10 5 L0 10 z" fill="#888"></path>
-          </marker>
-        </defs>
-      </svg>
-    </div>
+  <div class="graph-container" hidden>
+    <svg id="graph" version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="Triangle" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="#888"></path>
+        </marker>
+      </defs>
+    </svg>
+  </div>
+
+  <div class="welcome">
+    <p class="text-center">
+      <i class="fa fa-folder-open fa-5x" aria-hidden="true"></i>
+    </p>
+    <p class="text-center larger">
+      Open a git repository using "File > Open Folder"
+    </p>
   </div>
 
   <script src="src/main.js"></script>
