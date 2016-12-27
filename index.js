@@ -44,6 +44,10 @@ const template = [{
     accelerator: 'Ctrl+O',
     click: () => {
       dialog.showOpenDialog({ properties: ['openDirectory'] }, dirName => {
+        if (!dirName) {
+          return;
+        }
+
         console.log(dirName);
         win.webContents.send('open-repo', dirName.pop());
       });

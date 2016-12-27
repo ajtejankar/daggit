@@ -5,11 +5,6 @@ body {
   height: 100vh;
 }
 
-#graph {
-  height: 1000px;
-  width: 500px;
-}
-
 .welcome {
   height: 100%;
   width: 100%;
@@ -25,4 +20,16 @@ body {
 
 .larger {
   font-size: 1.2em;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
 }
